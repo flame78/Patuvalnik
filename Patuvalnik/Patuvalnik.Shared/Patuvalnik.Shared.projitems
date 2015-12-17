@@ -25,6 +25,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)PartialViews\TripsView.xaml.cs">
       <DependentUpon>TripsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TripsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)MainPage.xaml">

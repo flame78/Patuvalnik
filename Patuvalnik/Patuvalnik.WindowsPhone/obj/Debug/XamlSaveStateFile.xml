@@ -1,5 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
+    <LocalAssembly PathName="f:\projects\patuvalnik\patuvalnik\patuvalnik.windowsphone\obj\debug\intermediatexaml\patuvalnik.windowsphone.exe" HashGuid="9705bd4f-8692-0141-e41a-2b574fe97ea8" />
     <ReferenceAssembly PathName="f:\projects\patuvalnik\packages\newtonsoft.json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\newtonsoft.json.dll" HashGuid="0b4cdfc1-2257-2e75-23cf-4052e97b309e" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>
