@@ -1,0 +1,14 @@
+﻿<Page
+    x:Class="Patuvalnik.PartialViews.TripsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Patuvalnik.PartialViews"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Orientation="Horizontal">
+        <Image Source="Http://graph.facebook.com/v2.5/1140005046028124/picture" Width="50" Height="50"></Image>
+    </StackPanel>
+</Page>
+

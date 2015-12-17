@@ -1,0 +1,1 @@
+F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\Patuvalnik.Windows.csproj;neutral
