@@ -28,7 +28,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\Patuvalnik.Windows.exe">
       <PackagePath>Patuvalnik.Windows.exe</PackagePath>
-      <Modified>2015-12-17T09:30:03.154</Modified>
+      <Modified>2015-12-17T10:16:20.289</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -56,7 +56,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\Patuvalnik.Windows.xr.xml">
       <PackagePath>Patuvalnik.Windows.xr.xml</PackagePath>
-      <Modified>2015-12-17T09:30:03.020</Modified>
+      <Modified>2015-12-17T10:15:05.665</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
@@ -68,7 +68,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\PartialViews\TripsView.xbf">
       <PackagePath>PartialViews\TripsView.xbf</PackagePath>
-      <Modified>2015-12-17T09:30:03.075</Modified>
+      <Modified>2015-12-17T10:16:20.218</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

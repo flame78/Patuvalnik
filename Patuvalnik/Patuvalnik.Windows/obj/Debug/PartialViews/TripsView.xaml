@@ -8,10 +8,46 @@
     mc:Ignorable="d">
 
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Orientation="Horizontal">
-        <Image Source="Http://graph.facebook.com/v2.5/1140005046028124/picture" Width="50" Height="50"></Image>
-        <TextBlock Name="textBlock1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="Http://graph.facebook.com/v2.5/1140005046028124/picture" 
+                Grid.Row="0"
+                Grid.Column="0"/>
 
-	    </TextBlock>
+            <TextBlock Text="Name: "
+                                       Grid.Row="0"
+                                       Grid.Column="1"/>
+            <TextBlock Text="From city: "
+                                       Grid.Row="1"
+                                       Grid.Column="0"/>
+            <TextBlock Text="To city: "
+                                       Grid.Row="1"
+                                       Grid.Column="1"/>
+            <TextBlock Text="Date: "
+                                       Grid.Row="2"
+                                       Grid.Column="0"/>
+            <TextBlock Text="Time: "
+                                       Grid.Row="2"
+                                       Grid.Column="1"/>
+            <TextBlock Text="Seats left: "
+                                       Grid.Row="3"
+                                       Grid.Column="0"/>
+            <TextBlock Text="Price: "
+                                       Grid.Row="3"
+                                       Grid.Column="1"/>
+        </Grid>
     </StackPanel>
+
+
+
 </Page>
 
