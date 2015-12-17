@@ -10,20 +10,21 @@
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Orientation="Horizontal">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
-            <Image Source="Http://graph.facebook.com/v2.5/1140005046028124/picture" 
+            <Image Source="Http://graph.facebook.com/v2.5/1140005046028124/picture" Height="40" Width="40"
                 Grid.Row="0"
                 Grid.Column="0"/>
 
             <TextBlock Text="Name: "
+                       VerticalAlignment="Center"
                                        Grid.Row="0"
                                        Grid.Column="1"/>
             <TextBlock Text="From city: "
@@ -32,10 +33,10 @@
             <TextBlock Text="To city: "
                                        Grid.Row="1"
                                        Grid.Column="1"/>
-            <TextBlock Text="Date: "
+            <TextBlock Text="Start time: "
                                        Grid.Row="2"
                                        Grid.Column="0"/>
-            <TextBlock Text="Time: "
+            <TextBlock Text="End time: "
                                        Grid.Row="2"
                                        Grid.Column="1"/>
             <TextBlock Text="Seats left: "
