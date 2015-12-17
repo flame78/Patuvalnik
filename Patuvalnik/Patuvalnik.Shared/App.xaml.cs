@@ -39,8 +39,6 @@ namespace Patuvalnik
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
-            var ds = new VrumDataProvider();
-            ds.GetInformation();
         }
 
         /// <summary>
