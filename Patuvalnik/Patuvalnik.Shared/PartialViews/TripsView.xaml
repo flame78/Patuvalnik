@@ -9,5 +9,8 @@
 
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Orientation="Horizontal">
         <Image Source="Http://graph.facebook.com/v2.5/1140005046028124/picture" Width="50" Height="50"></Image>
+        <TextBlock Name="textBlock1">
+
+	    </TextBlock>
     </StackPanel>
 </Page>
