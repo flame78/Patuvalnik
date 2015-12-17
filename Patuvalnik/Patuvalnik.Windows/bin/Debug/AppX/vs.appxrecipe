@@ -1,14 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>FLAME78</Machine>
-    <WindowsUser>Plamen Stepanyan</WindowsUser>
+    <Machine>MASHA</Machine>
+    <WindowsUser>Mash</WindowsUser>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetOsVersion>6.3</TargetOsVersion>
+    <TargetOsDescription>Windows 8.1</TargetOsDescription>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>5530bd84-cc52-4c78-a452-f34c2ce51531</PackageIdentityName>
-    <IntermediateOutputPath>F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\obj\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>290808E8643B73205DD7EF259AEBFAB9E3FDA8F865A5CA54D9FAD4A4A4EF34CF</RegisteredManifestChecksum>
+    <IntermediateOutputPath>C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\obj\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>F57E2EDFAE508F13AE6E6A11E1BA972FDDD2A047165D5F3135A770C71F3B890A</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>5530bd84-cc52-4c78-a452-f34c2ce51531_1.0.0.0_neutral__grb5b688mxs16</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>5530bd84-cc52-4c78-a452-f34c2ce51531_grb5b688mxs16!App</RegisteredUserModeAppID>
     <RegisteredPackageID>5530bd84-cc52-4c78-a452-f34c2ce51531</RegisteredPackageID>
@@ -17,60 +19,60 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-12-17T08:36:38.955</Modified>
+      <Modified>2015-12-17T09:30:04.263</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\Patuvalnik.Windows.exe">
+    <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\Patuvalnik.Windows.exe">
       <PackagePath>Patuvalnik.Windows.exe</PackagePath>
-      <Modified>2015-12-17T08:36:38.715</Modified>
+      <Modified>2015-12-17T09:30:03.154</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\projects\Patuvalnik\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
-      <Modified>2015-12-16T14:41:21.196</Modified>
+      <Modified>2015-12-17T09:27:24.337</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-03-14T17:55:28.000</Modified>
+      <Modified>2015-12-17T09:27:24.615</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-03-14T17:55:28.000</Modified>
+      <Modified>2015-12-17T09:27:24.616</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-03-14T17:55:28.000</Modified>
+      <Modified>2015-12-17T09:27:24.618</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-03-14T17:55:28.000</Modified>
+      <Modified>2015-12-17T09:27:24.620</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\App.xbf">
-      <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-12-16T15:10:13.307</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\MainPage.xbf">
-      <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-12-17T08:36:38.500</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\PartialViews\TripsView.xbf">
-      <PackagePath>PartialViews\TripsView.xbf</PackagePath>
-      <Modified>2015-12-17T08:36:38.502</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\Patuvalnik.Windows.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\Patuvalnik.Windows.xr.xml">
       <PackagePath>Patuvalnik.Windows.xr.xml</PackagePath>
-      <Modified>2015-12-17T08:36:38.430</Modified>
+      <Modified>2015-12-17T09:30:03.020</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2015-12-17T09:30:03.070</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2015-12-17T09:30:03.072</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\PartialViews\TripsView.xbf">
+      <PackagePath>PartialViews\TripsView.xbf</PackagePath>
+      <Modified>2015-12-17T09:30:03.075</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-12-17T08:36:38.833</Modified>
+      <Modified>2015-12-17T09:30:03.520</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

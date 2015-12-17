@@ -1,1 +1,1 @@
-F:\projects\Patuvalnik\Patuvalnik\Patuvalnik.Windows\Patuvalnik.Windows.csproj;neutral
+C:\Users\Mash\Desktop\patuvalnik\Patuvalnik\Patuvalnik.Windows\Patuvalnik.Windows.csproj;neutral
