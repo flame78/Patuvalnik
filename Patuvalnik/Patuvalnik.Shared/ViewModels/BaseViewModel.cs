@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
-
-namespace Patuvalnik.ViewModels
+﻿namespace Patuvalnik.ViewModels
 {
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
+
     public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void NotifyPropertyChanged([CallerMemberName]string propertyName = "")
+        public void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
             if (this.PropertyChanged != null)
             {

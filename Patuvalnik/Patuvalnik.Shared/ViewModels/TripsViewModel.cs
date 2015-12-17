@@ -1,38 +1,45 @@
-﻿using Patuvalnik.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Patuvalnik.ViewModels
+﻿namespace Patuvalnik.ViewModels
 {
+    using System.Collections.Generic;
+
+    using Patuvalnik.Models;
     using Patuvalnik.REST;
-    using System.Threading.Tasks;
 
     public class TripsViewModel : BaseViewModel
     {
-        private Task<List<Trip>> trips;
-
         private VrumDataProvider dp;
+
+        private List<Trip> trips;
 
         public TripsViewModel()
         {
-            dp=new VrumDataProvider();
-            
+            dp = new VrumDataProvider();
+            this.GetTripsAsync();
         }
 
-        public Task<List<Trip>> Trips {  get
+        public List<Trip> Trips
+        {
+            get
             {
-                if (this.trips==null)
-                {
-                    this.trips = this.dp.GetInformation();
-                }
                 return this.trips;
             }
             set
             {
-                if (this.trips == value) return;
+                if (this.trips == value)
+                {
+                    return;
+                }
                 this.trips = value;
                 NotifyPropertyChanged("Trips");
+            }
+        }
+
+        public async void GetTripsAsync()
+        {
+            if (this.trips == null)
+            {
+                var t = await this.dp.GetInformation();
+                this.Trips = t;
             }
         }
     }
