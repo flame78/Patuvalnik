@@ -14,5 +14,13 @@ namespace Patuvalnik.Models
         public ulong? Real_fb_id { get; set; }
 
         public string Name { get; set; }
+
+        public string ProfilePicture
+        {
+            get
+            {
+                return string.Format("http://graph.facebook.com/v2.5/{0}/picture", this.Fb_id);
+            }
+        }
     }
 }

@@ -13,8 +13,8 @@ namespace Patuvalnik.REST
 
     public class VrumDataProvider
     {
-        private const string ReqUri = "http://api.vrumapp.com/api/v1/trips/from/2/to/1.json?page=1";
-
+       // private const string ReqUri = "http://api.vrumapp.com/api/v1/trips/from/2/to/1.json?page=1";
+             private const string ReqUri = "http://api.vrumapp.com/api/v1/trips/from/1.json";
         public VrumDataProvider()
         {
         }
@@ -30,7 +30,7 @@ namespace Patuvalnik.REST
 
             string response = await client.GetStringAsync(uri);
 
-            var resultObj = JsonConvert.DeserializeObject<List<Trip>>(response);
+            List<Trip> resultObj = JsonConvert.DeserializeObject<List<Trip>>(response);
 
             return resultObj;
         }

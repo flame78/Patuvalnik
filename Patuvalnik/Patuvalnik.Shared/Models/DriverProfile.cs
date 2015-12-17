@@ -9,7 +9,7 @@ namespace Patuvalnik.Models
     {
         public User User { get; set; }
 
-        public string Rating { get; set; }
+        public decimal? Rating { get; set; }
 
         public int? Ratings_count { get; set; }
     }
