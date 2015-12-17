@@ -6,9 +6,20 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="using:Patuvalnik.PartialViews"
+    xmlns:ap="using:Patuvalnik.AttachedProporties"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <views:TripsView/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <views:TripsView Name="Tv"
+                         Grid.Column="0"
+                         ap:CitiesExtension.CityFrom="1"
+                         ap:CitiesExtension.CityTo="2" />
+        <views:TripsView Grid.Column="1"
+                         ap:CitiesExtension.CityFrom="2"
+                         ap:CitiesExtension.CityTo="1" />
     </Grid>
 </Page>

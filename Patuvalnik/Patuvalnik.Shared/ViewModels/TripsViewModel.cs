@@ -11,11 +11,16 @@
 
         private List<Trip> trips;
 
+        public int CityFrom { get; set; }
+
+        public int CityTo { get; set; } 
+
         public TripsViewModel()
         {
             dp = new VrumDataProvider();
             this.GetTripsAsync();
         }
+
 
         public List<Trip> Trips
         {
