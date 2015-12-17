@@ -8,6 +8,6 @@
     mc:Ignorable="d">
 
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Orientation="Horizontal">
-        <Image Source="Http://graph.facebook.com/v2.5/1140005046028124/picture"></Image>
+        <Image Source="Http://graph.facebook.com/v2.5/1140005046028124/picture" Width="50" Height="50"></Image>
     </StackPanel>
 </Page>
