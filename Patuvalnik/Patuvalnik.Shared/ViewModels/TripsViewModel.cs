@@ -2,18 +2,19 @@
 {
     using System.Collections.Generic;
 
+    using Patuvalnik.Contracts;
     using Patuvalnik.Models;
     using Patuvalnik.REST;
 
     public class TripsViewModel : BaseViewModel
     {
-        private VrumDataProvider dp;
+        private IDataProvider dp;
 
         private List<Trip> trips;
 
-     public TripsViewModel(int from=0, int to=0)
+     public TripsViewModel(IDataProvider dataProvider, int from=0, int to=0)
         {
-            dp = new VrumDataProvider();
+            this.dp = dataProvider;
             this.GetTripsAsync(from, to);
         }
 
@@ -39,9 +40,11 @@
         {
             if (this.trips == null)
             {
-                var t = await this.dp.GetInformation(from, to);
+                var t = await this.dp.GetTrips(from, to);
                 this.Trips = t;
             }
         }
     }
+
+    
 }

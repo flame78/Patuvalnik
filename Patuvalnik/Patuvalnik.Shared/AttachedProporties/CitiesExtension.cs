@@ -27,7 +27,6 @@ namespace Patuvalnik.AttachedProporties
 
       private static void OnCityFromChange(DependencyObject d, DependencyPropertyChangedEventArgs e)
       {
-         var a = 5;
       }
 
       public static int GetCityTo(DependencyObject obj)

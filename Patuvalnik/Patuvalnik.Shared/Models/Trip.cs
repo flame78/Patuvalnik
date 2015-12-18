@@ -37,6 +37,5 @@ namespace Patuvalnik.Models
         public decimal? Price { get; set; }
 
         public DriverProfile Driver_profile { get; set; }
-
     }
 }

@@ -19,6 +19,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ChangeCitiesPage.xaml.cs">
       <DependentUpon>ChangeCitiesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Contracts\IDataProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FeedPage.xaml.cs">
       <DependentUpon>FeedPage.xaml</DependentUpon>
     </Compile>
@@ -26,6 +27,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)DataProvider\VrumDataProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\City.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\DriverProfile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Trip.cs" />
