@@ -124,17 +124,45 @@ namespace Patuvalnik.Patuvalnik_Windows_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[4];
-            _typeNameTable[0] = "Patuvalnik.PartialViews.TripsView";
+            _typeNameTable = new string[18];
+            _typeNameTable[0] = "Patuvalnik.Pages.ChangeCitiesPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "Patuvalnik.MainPage";
+            _typeNameTable[3] = "Patuvalnik.Pages.FeedPage";
+            _typeNameTable[4] = "Patuvalnik.ViewModels.MainPageViewModel";
+            _typeNameTable[5] = "Object";
+            _typeNameTable[6] = "Patuvalnik.ViewModels.TripsViewModel";
+            _typeNameTable[7] = "Patuvalnik.ViewModels.BaseViewModel";
+            _typeNameTable[8] = "System.Collections.Generic.List`1<Patuvalnik.Models.City>";
+            _typeNameTable[9] = "Patuvalnik.Models.City";
+            _typeNameTable[10] = "Int32";
+            _typeNameTable[11] = "String";
+            _typeNameTable[12] = "Double";
+            _typeNameTable[13] = "System.DateTime";
+            _typeNameTable[14] = "System.ValueType";
+            _typeNameTable[15] = "Patuvalnik.PartialViews.TripsView";
+            _typeNameTable[16] = "Patuvalnik.MainPage";
+            _typeNameTable[17] = "Patuvalnik.Pages.OptionsPage";
 
-            _typeTable = new global::System.Type[4];
-            _typeTable[0] = typeof(global::Patuvalnik.PartialViews.TripsView);
+            _typeTable = new global::System.Type[18];
+            _typeTable[0] = typeof(global::Patuvalnik.Pages.ChangeCitiesPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::Patuvalnik.MainPage);
+            _typeTable[3] = typeof(global::Patuvalnik.Pages.FeedPage);
+            _typeTable[4] = typeof(global::Patuvalnik.ViewModels.MainPageViewModel);
+            _typeTable[5] = typeof(global::System.Object);
+            _typeTable[6] = typeof(global::Patuvalnik.ViewModels.TripsViewModel);
+            _typeTable[7] = typeof(global::Patuvalnik.ViewModels.BaseViewModel);
+            _typeTable[8] = typeof(global::System.Collections.Generic.List<global::Patuvalnik.Models.City>);
+            _typeTable[9] = typeof(global::Patuvalnik.Models.City);
+            _typeTable[10] = typeof(global::System.Int32);
+            _typeTable[11] = typeof(global::System.String);
+            _typeTable[12] = typeof(global::System.Double);
+            _typeTable[13] = typeof(global::System.DateTime);
+            _typeTable[14] = typeof(global::System.ValueType);
+            _typeTable[15] = typeof(global::Patuvalnik.PartialViews.TripsView);
+            _typeTable[16] = typeof(global::Patuvalnik.MainPage);
+            _typeTable[17] = typeof(global::Patuvalnik.Pages.OptionsPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -169,8 +197,21 @@ namespace Patuvalnik.Patuvalnik_Windows_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_TripsView() { return new global::Patuvalnik.PartialViews.TripsView(); }
-        private object Activate_3_MainPage() { return new global::Patuvalnik.MainPage(); }
+        private object Activate_0_ChangeCitiesPage() { return new global::Patuvalnik.Pages.ChangeCitiesPage(); }
+        private object Activate_3_FeedPage() { return new global::Patuvalnik.Pages.FeedPage(); }
+        private object Activate_4_MainPageViewModel() { return new global::Patuvalnik.ViewModels.MainPageViewModel(); }
+        private object Activate_7_BaseViewModel() { return new global::Patuvalnik.ViewModels.BaseViewModel(); }
+        private object Activate_8_List() { return new global::System.Collections.Generic.List<global::Patuvalnik.Models.City>(); }
+        private object Activate_9_City() { return new global::Patuvalnik.Models.City(); }
+        private object Activate_15_TripsView() { return new global::Patuvalnik.PartialViews.TripsView(); }
+        private object Activate_16_MainPage() { return new global::Patuvalnik.MainPage(); }
+        private object Activate_17_OptionsPage() { return new global::Patuvalnik.Pages.OptionsPage(); }
+        private void VectorAdd_8_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::Patuvalnik.Models.City>)instance;
+            var newItem = (global::Patuvalnik.Models.City)item;
+            collection.Add(newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -182,9 +223,9 @@ namespace Patuvalnik.Patuvalnik_Windows_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  Patuvalnik.PartialViews.TripsView
+            case 0:   //  Patuvalnik.Pages.ChangeCitiesPage
                 userType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_TripsView;
+                userType.Activator = Activate_0_ChangeCitiesPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -197,9 +238,106 @@ namespace Patuvalnik.Patuvalnik_Windows_XamlTypeInfo
                 xamlType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Patuvalnik.MainPage
+            case 3:   //  Patuvalnik.Pages.FeedPage
                 userType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_MainPage;
+                userType.Activator = Activate_3_FeedPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  Patuvalnik.ViewModels.MainPageViewModel
+                userType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_4_MainPageViewModel;
+                userType.AddMemberName("TripsFromTo");
+                userType.AddMemberName("TripsToFrom");
+                userType.AddMemberName("TripsFrom");
+                userType.AddMemberName("TripsTo");
+                userType.AddMemberName("Cities");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  Object
+                xamlType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 6:   //  Patuvalnik.ViewModels.TripsViewModel
+                userType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Patuvalnik.ViewModels.BaseViewModel"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  Patuvalnik.ViewModels.BaseViewModel
+                userType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_7_BaseViewModel;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 8:   //  System.Collections.Generic.List`1<Patuvalnik.Models.City>
+                userType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_8_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 9:   //  Patuvalnik.Models.City
+                userType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_9_City;
+                userType.AddMemberName("Id");
+                userType.AddMemberName("Name");
+                userType.AddMemberName("LocalizedName");
+                userType.AddMemberName("Priority");
+                userType.AddMemberName("Lat");
+                userType.AddMemberName("Lng");
+                userType.AddMemberName("Radius");
+                userType.AddMemberName("CreatedAt");
+                userType.AddMemberName("UpdatedAt");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 10:   //  Int32
+                xamlType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 11:   //  String
+                xamlType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 12:   //  Double
+                xamlType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 13:   //  System.DateTime
+                userType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 14:   //  System.ValueType
+                userType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
+                break;
+
+            case 15:   //  Patuvalnik.PartialViews.TripsView
+                userType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_15_TripsView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 16:   //  Patuvalnik.MainPage
+                userType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_16_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 17:   //  Patuvalnik.Pages.OptionsPage
+                userType = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_17_OptionsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -208,11 +346,239 @@ namespace Patuvalnik.Patuvalnik_Windows_XamlTypeInfo
         }
 
 
+        private object get_0_MainPageViewModel_TripsFromTo(object instance)
+        {
+            var that = (global::Patuvalnik.ViewModels.MainPageViewModel)instance;
+            return that.TripsFromTo;
+        }
+        private void set_0_MainPageViewModel_TripsFromTo(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.ViewModels.MainPageViewModel)instance;
+            that.TripsFromTo = (global::Patuvalnik.ViewModels.TripsViewModel)Value;
+        }
+        private object get_1_MainPageViewModel_TripsToFrom(object instance)
+        {
+            var that = (global::Patuvalnik.ViewModels.MainPageViewModel)instance;
+            return that.TripsToFrom;
+        }
+        private void set_1_MainPageViewModel_TripsToFrom(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.ViewModels.MainPageViewModel)instance;
+            that.TripsToFrom = (global::Patuvalnik.ViewModels.TripsViewModel)Value;
+        }
+        private object get_2_MainPageViewModel_TripsFrom(object instance)
+        {
+            var that = (global::Patuvalnik.ViewModels.MainPageViewModel)instance;
+            return that.TripsFrom;
+        }
+        private void set_2_MainPageViewModel_TripsFrom(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.ViewModels.MainPageViewModel)instance;
+            that.TripsFrom = (global::Patuvalnik.ViewModels.TripsViewModel)Value;
+        }
+        private object get_3_MainPageViewModel_TripsTo(object instance)
+        {
+            var that = (global::Patuvalnik.ViewModels.MainPageViewModel)instance;
+            return that.TripsTo;
+        }
+        private void set_3_MainPageViewModel_TripsTo(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.ViewModels.MainPageViewModel)instance;
+            that.TripsTo = (global::Patuvalnik.ViewModels.TripsViewModel)Value;
+        }
+        private object get_4_MainPageViewModel_Cities(object instance)
+        {
+            var that = (global::Patuvalnik.ViewModels.MainPageViewModel)instance;
+            return that.Cities;
+        }
+        private void set_4_MainPageViewModel_Cities(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.ViewModels.MainPageViewModel)instance;
+            that.Cities = (global::System.Collections.Generic.List<global::Patuvalnik.Models.City>)Value;
+        }
+        private object get_5_City_Id(object instance)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            return that.Id;
+        }
+        private void set_5_City_Id(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            that.Id = (global::System.Int32)Value;
+        }
+        private object get_6_City_Name(object instance)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            return that.Name;
+        }
+        private void set_6_City_Name(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            that.Name = (global::System.String)Value;
+        }
+        private object get_7_City_LocalizedName(object instance)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            return that.LocalizedName;
+        }
+        private void set_7_City_LocalizedName(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            that.LocalizedName = (global::System.String)Value;
+        }
+        private object get_8_City_Priority(object instance)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            return that.Priority;
+        }
+        private void set_8_City_Priority(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            that.Priority = (global::System.Int32)Value;
+        }
+        private object get_9_City_Lat(object instance)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            return that.Lat;
+        }
+        private void set_9_City_Lat(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            that.Lat = (global::System.Double)Value;
+        }
+        private object get_10_City_Lng(object instance)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            return that.Lng;
+        }
+        private void set_10_City_Lng(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            that.Lng = (global::System.Double)Value;
+        }
+        private object get_11_City_Radius(object instance)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            return that.Radius;
+        }
+        private void set_11_City_Radius(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            that.Radius = (global::System.Double)Value;
+        }
+        private object get_12_City_CreatedAt(object instance)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            return that.CreatedAt;
+        }
+        private void set_12_City_CreatedAt(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            that.CreatedAt = (global::System.DateTime)Value;
+        }
+        private object get_13_City_UpdatedAt(object instance)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            return that.UpdatedAt;
+        }
+        private void set_13_City_UpdatedAt(object instance, object Value)
+        {
+            var that = (global::Patuvalnik.Models.City)instance;
+            that.UpdatedAt = (global::System.DateTime)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "Patuvalnik.ViewModels.MainPageViewModel.TripsFromTo":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.ViewModels.MainPageViewModel");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "TripsFromTo", "Patuvalnik.ViewModels.TripsViewModel");
+                xamlMember.Getter = get_0_MainPageViewModel_TripsFromTo;
+                xamlMember.Setter = set_0_MainPageViewModel_TripsFromTo;
+                break;
+            case "Patuvalnik.ViewModels.MainPageViewModel.TripsToFrom":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.ViewModels.MainPageViewModel");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "TripsToFrom", "Patuvalnik.ViewModels.TripsViewModel");
+                xamlMember.Getter = get_1_MainPageViewModel_TripsToFrom;
+                xamlMember.Setter = set_1_MainPageViewModel_TripsToFrom;
+                break;
+            case "Patuvalnik.ViewModels.MainPageViewModel.TripsFrom":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.ViewModels.MainPageViewModel");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "TripsFrom", "Patuvalnik.ViewModels.TripsViewModel");
+                xamlMember.Getter = get_2_MainPageViewModel_TripsFrom;
+                xamlMember.Setter = set_2_MainPageViewModel_TripsFrom;
+                break;
+            case "Patuvalnik.ViewModels.MainPageViewModel.TripsTo":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.ViewModels.MainPageViewModel");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "TripsTo", "Patuvalnik.ViewModels.TripsViewModel");
+                xamlMember.Getter = get_3_MainPageViewModel_TripsTo;
+                xamlMember.Setter = set_3_MainPageViewModel_TripsTo;
+                break;
+            case "Patuvalnik.ViewModels.MainPageViewModel.Cities":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.ViewModels.MainPageViewModel");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "Cities", "System.Collections.Generic.List`1<Patuvalnik.Models.City>");
+                xamlMember.Getter = get_4_MainPageViewModel_Cities;
+                xamlMember.Setter = set_4_MainPageViewModel_Cities;
+                break;
+            case "Patuvalnik.Models.City.Id":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.Models.City");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "Id", "Int32");
+                xamlMember.Getter = get_5_City_Id;
+                xamlMember.Setter = set_5_City_Id;
+                break;
+            case "Patuvalnik.Models.City.Name":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.Models.City");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "Name", "String");
+                xamlMember.Getter = get_6_City_Name;
+                xamlMember.Setter = set_6_City_Name;
+                break;
+            case "Patuvalnik.Models.City.LocalizedName":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.Models.City");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "LocalizedName", "String");
+                xamlMember.Getter = get_7_City_LocalizedName;
+                xamlMember.Setter = set_7_City_LocalizedName;
+                break;
+            case "Patuvalnik.Models.City.Priority":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.Models.City");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "Priority", "Int32");
+                xamlMember.Getter = get_8_City_Priority;
+                xamlMember.Setter = set_8_City_Priority;
+                break;
+            case "Patuvalnik.Models.City.Lat":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.Models.City");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "Lat", "Double");
+                xamlMember.Getter = get_9_City_Lat;
+                xamlMember.Setter = set_9_City_Lat;
+                break;
+            case "Patuvalnik.Models.City.Lng":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.Models.City");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "Lng", "Double");
+                xamlMember.Getter = get_10_City_Lng;
+                xamlMember.Setter = set_10_City_Lng;
+                break;
+            case "Patuvalnik.Models.City.Radius":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.Models.City");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "Radius", "Double");
+                xamlMember.Getter = get_11_City_Radius;
+                xamlMember.Setter = set_11_City_Radius;
+                break;
+            case "Patuvalnik.Models.City.CreatedAt":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.Models.City");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "CreatedAt", "System.DateTime");
+                xamlMember.Getter = get_12_City_CreatedAt;
+                xamlMember.Setter = set_12_City_CreatedAt;
+                break;
+            case "Patuvalnik.Models.City.UpdatedAt":
+                userType = (global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Patuvalnik.Models.City");
+                xamlMember = new global::Patuvalnik.Patuvalnik_Windows_XamlTypeInfo.XamlMember(this, "UpdatedAt", "System.DateTime");
+                xamlMember.Getter = get_13_City_UpdatedAt;
+                xamlMember.Setter = set_13_City_UpdatedAt;
+                break;
+            }
             return xamlMember;
         }
     }
@@ -537,6 +903,5 @@ namespace Patuvalnik.Patuvalnik_Windows_XamlTypeInfo
         }
     }
 }
-
 
 

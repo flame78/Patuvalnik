@@ -28,13 +28,51 @@
                        VerticalAlignment="Center"
                                 Grid.Row="0"
                                 Grid.Column="0"/>
-        <Button x:Name="ChangeCitiesButton" Content="Change cities"
-                HorizontalAlignment="Center"
-                Grid.Row="0"
-                Grid.Column="0"/>
-        <Button x:Name="OptionsButton" Content="Options"
-                Grid.Row="0"
-                Grid.Column="2"/>
+        <ComboBox Name="cmbOptions"                
+                  Grid.Row="0"
+                  Grid.Column="2">
+            <ComboBoxItem>Invite friends</ComboBoxItem>
+            <ComboBoxItem>Rate Patuvalnik</ComboBoxItem>
+            <ComboBoxItem>Log out</ComboBoxItem>
+        </ComboBox>
+        <TextBlock 
+            Grid.Row="0"
+                  Grid.Column="2"
+            x:Name="tb" Text="Options" FontSize="20" IsHitTestVisible="False"/>
+        <ComboBox Name="cmbChangeCities" 
+                  HorizontalAlignment="Center"
+                  Grid.Row="0"
+                  Grid.Column="0">
+            <ComboBoxItem>Select from city:</ComboBoxItem>
+            <ComboBoxItem>
+                <ComboBox>
+                    <ComboBoxItem>City1</ComboBoxItem>
+                    <ComboBoxItem>City2</ComboBoxItem>
+                </ComboBox>
+            </ComboBoxItem>
+            <ComboBoxItem>Select to city:</ComboBoxItem>
+            <ComboBoxItem>
+                <ComboBox>
+                    <ComboBoxItem>City1</ComboBoxItem>
+                    <ComboBoxItem>City2</ComboBoxItem>
+                </ComboBox>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button x:Name="OkButton" BorderBrush="Black">
+                    <TextBlock Text = "Ok" Foreground="Black"/>
+                </Button>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Button x:Name="CancelButton" BorderBrush="Black">
+                    <TextBlock Text = "Cancel" Foreground="Black"/>
+                </Button>
+            </ComboBoxItem>
+        </ComboBox>
+        <TextBlock 
+            Grid.Row="0"
+                  Grid.Column="0"
+            HorizontalAlignment="Center"
+            Text="Change cities" FontSize="20" IsHitTestVisible="False"/>
         <views:TripsView DataContext="{Binding TripsFromTo}"
                          Grid.Row="1"
                          Grid.Column="0"
