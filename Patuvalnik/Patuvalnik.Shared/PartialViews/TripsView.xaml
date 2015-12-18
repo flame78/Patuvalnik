@@ -9,9 +9,6 @@
     DataContext="viewModels:TripsViewModel">
 
     <Grid>
-        <Grid.DataContext>
-            <viewModels:TripsViewModel/>
-        </Grid.DataContext>
         <ListBox ItemsSource="{Binding Trips}">
             <ListBox.ItemTemplate>
                 <DataTemplate>

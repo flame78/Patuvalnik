@@ -6,10 +6,51 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="using:Patuvalnik.PartialViews"
+    xmlns:ap="using:Patuvalnik.AttachedProporties"
+    xmlns:vm="using:Patuvalnik.ViewModels"
     mc:Ignorable="d">
-
+    <Page.DataContext>
+        <vm:MainPageViewModel />
+    </Page.DataContext>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <views:TripsView/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Feed"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                                Grid.Row="0"
+                                Grid.Column="0"/>
+        <Button x:Name="ChangeCitiesButton" Content="Change cities"
+                HorizontalAlignment="Center"
+                Grid.Row="0"
+                Grid.Column="0"/>
+        <Button x:Name="OptionsButton" Content="Options"
+                Grid.Row="0"
+                Grid.Column="2"/>
+        <views:TripsView DataContext="{Binding TripsFromTo}"
+                         Grid.Row="1"
+                         Grid.Column="0"
+                         />
+        <views:TripsView DataContext="{Binding TripsToFrom}"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         />
+        <views:TripsView DataContext="{Binding TripsFrom}"
+                         Grid.Row="1"
+                         Grid.Column="2"
+                         />
+        <views:TripsView DataContext="{Binding TripsTo}"
+                         Grid.Row="1"
+                         Grid.Column="3"
+                         />
     </Grid>
 </Page>
 

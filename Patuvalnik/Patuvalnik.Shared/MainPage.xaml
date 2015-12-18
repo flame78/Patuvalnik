@@ -7,10 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="using:Patuvalnik.PartialViews"
     xmlns:ap="using:Patuvalnik.AttachedProporties"
+    xmlns:vm="using:Patuvalnik.ViewModels"
     mc:Ignorable="d">
-
+    <Page.DataContext>
+        <vm:MainPageViewModel />
+    </Page.DataContext>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
@@ -30,14 +35,21 @@
         <Button x:Name="OptionsButton" Content="Options"
                 Grid.Row="0"
                 Grid.Column="2"/>
-        <views:TripsView Name="Tv"
+        <views:TripsView DataContext="{Binding TripsFromTo}"
                          Grid.Row="1"
                          Grid.Column="0"
-                         ap:CitiesExtension.CityFrom="1"
-                         ap:CitiesExtension.CityTo="2" />
-        <views:TripsView Grid.Row="1"
+                         />
+        <views:TripsView DataContext="{Binding TripsToFrom}"
+                         Grid.Row="1"
                          Grid.Column="1"
-                         ap:CitiesExtension.CityFrom="2"
-                         ap:CitiesExtension.CityTo="1" />
+                         />
+        <views:TripsView DataContext="{Binding TripsFrom}"
+                         Grid.Row="1"
+                         Grid.Column="2"
+                         />
+        <views:TripsView DataContext="{Binding TripsTo}"
+                         Grid.Row="1"
+                         Grid.Column="3"
+                         />
     </Grid>
 </Page>
