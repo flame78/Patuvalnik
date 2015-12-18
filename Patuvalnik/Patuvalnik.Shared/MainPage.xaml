@@ -11,14 +11,32 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Feed"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                                Grid.Row="0"
+                                Grid.Column="0"/>
+        <Button x:Name="ChangeCitiesButton" Content="Change cities"
+                HorizontalAlignment="Center"
+                Grid.Row="0"
+                Grid.Column="0"/>
+        <Button x:Name="OptionsButton" Content="Options"
+                Grid.Row="0"
+                Grid.Column="2"/>
         <views:TripsView Name="Tv"
+                         Grid.Row="1"
                          Grid.Column="0"
                          ap:CitiesExtension.CityFrom="1"
                          ap:CitiesExtension.CityTo="2" />
-        <views:TripsView Grid.Column="1"
+        <views:TripsView Grid.Row="1"
+                         Grid.Column="1"
                          ap:CitiesExtension.CityFrom="2"
                          ap:CitiesExtension.CityTo="1" />
     </Grid>
