@@ -4,11 +4,14 @@ using System.Text;
 
 namespace Patuvalnik.ViewModels
 {
+    using System.Linq;
+
     using Patuvalnik.Contracts;
     using Patuvalnik.Models;
     using Patuvalnik.REST;
+    using System.Threading.Tasks;
 
-    public class MainPageViewModel
+    public class MainPageViewModel : BaseViewModel
     {
         private IDataProvider dataProvider;
 
@@ -19,22 +22,30 @@ namespace Patuvalnik.ViewModels
 
         public List<City> Cities { get; set; }
 
-        
+
         public MainPageViewModel()
         {
             this.dataProvider = new VrumDataProvider();
-            this.GetCities();
-            this.TripsFromTo = new TripsViewModel(this.dataProvider,  1, 2);
-            this.TripsToFrom = new TripsViewModel(this.dataProvider, 2, 1);
-            this.TripsFrom = new TripsViewModel(this.dataProvider, 1, 0);
-            this.TripsTo = new TripsViewModel(this.dataProvider, 0, 2);
 
+            
+                this.TripsFromTo = new TripsViewModel(this.dataProvider,  1, 2);
+                this.TripsToFrom = new TripsViewModel(this.dataProvider, 2, 1);
+                this.TripsFrom = new TripsViewModel(this.dataProvider, 1, 0);
+                this.TripsTo = new TripsViewModel(this.dataProvider, 0, 2);
+                this.GetCities();
             
         }
 
         private async void GetCities()
         {
             this.Cities = await this.dataProvider.GetCities();
+
+            var cities = this.Cities.ToDictionary(city => city.Id, city => city.Name);
+
+            this.TripsFromTo.Cities = cities;
+            this.TripsToFrom.Cities = cities;
+            this.TripsFrom.Cities = cities;
+            this.TripsTo.Cities = cities;
         }
 
     }

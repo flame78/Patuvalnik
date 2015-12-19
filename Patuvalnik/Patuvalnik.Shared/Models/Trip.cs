@@ -18,7 +18,11 @@ namespace Patuvalnik.Models
 
         public int From_city_id { get; set; }
 
+        public string FromCity { get; set; }
+
         public int To_city_id { get; set; }
+
+        public string ToCity { get; set; }
 
         public DateTime Start_time { get; set; }
 

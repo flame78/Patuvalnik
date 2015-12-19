@@ -39,7 +39,7 @@
                                     Orientation="Horizontal">
                             <TextBlock Text="From city: "
                                        VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding From_city_id}"
+                            <TextBlock Text="{Binding FromCity}"
                                        VerticalAlignment="Center"/>
                         </StackPanel>
                         <StackPanel Grid.Row="1"
@@ -47,7 +47,7 @@
                                     Orientation="Horizontal">
                             <TextBlock Text="To city: "
                                        VerticalAlignment="Center"/>
-                            <TextBlock Text="{Binding To_city_id}"
+                            <TextBlock Text="{Binding ToCity}"
                                        VerticalAlignment="Center"/>
                         </StackPanel>
                         <StackPanel Grid.Row="2"
