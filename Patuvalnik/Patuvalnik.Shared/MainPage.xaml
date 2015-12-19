@@ -21,76 +21,87 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="1*"/>
+            <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBlock Text="Feed"
-                       FontSize="20"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                                Grid.Row="0"
-                                Grid.Column="0"/>
-        <ComboBox Name="cmbOptions"                
-                  Grid.Row="1"
-                  Grid.Column="2">
-            <ComboBoxItem>Invite friends</ComboBoxItem>
-            <ComboBoxItem>Rate Patuvalnik</ComboBoxItem>
-            <ComboBoxItem>Log out</ComboBoxItem>
-        </ComboBox>
-        <TextBlock 
-            Grid.Row="0"
-            Grid.Column="2"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            x:Name="tb" Text="Options" FontSize="20" IsHitTestVisible="False"/>
-        <ComboBox Name="cmbChangeCities" 
-                  Grid.Row="1"
-                  Grid.Column="1">
-            <ComboBoxItem>Select from city:</ComboBoxItem>
-            <ComboBoxItem>
-                <ComboBox>
-                    <ComboBoxItem>City1</ComboBoxItem>
-                    <ComboBoxItem>City2</ComboBoxItem>
-                </ComboBox>
-            </ComboBoxItem>
-            <ComboBoxItem>Select to city:</ComboBoxItem>
-            <ComboBoxItem>
-                <ComboBox>
-                    <ComboBoxItem>City1</ComboBoxItem>
-                    <ComboBoxItem>City2</ComboBoxItem>
-                </ComboBox>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <Button x:Name="OkButton" BorderBrush="Black">
-                    <TextBlock Text = "Ok" Foreground="Black" Width="50"/>
-                </Button>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <Button x:Name="CancelButton" BorderBrush="Black">
-                    <TextBlock Text = "Cancel" Foreground="Black" Width="50"/>
-                </Button>
-            </ComboBoxItem>
-        </ComboBox>
-        <TextBlock 
+
+        <StackPanel  Grid.Row="0"
+                     Grid.Column="0" 
+                     Width="170">
+            <Button  FontSize="20"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Stretch"
+                     BorderThickness="0" 
+                     Content="Feed"
+                     Click="FeedButtonClick" />
+            <Popup IsLightDismissEnabled="True" Name="feedDropDown" >
+                <StackPanel Background="DarkGray" >
+                    <Button BorderThickness="0" Content="Use current location" HorizontalAlignment="Stretch" Click="UseCurrentLocation" />
+                    <Button BorderThickness="0" Content="Rate driver" HorizontalAlignment="Stretch" Click="RateDriver" />
+                </StackPanel>
+            </Popup>
+        </StackPanel>
+
+        <StackPanel 
             Grid.Row="0"
             Grid.Column="1"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Text="Change cities" FontSize="20" IsHitTestVisible="False"/>
+            Width="200">
+            <Button  FontSize="20"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Stretch"
+                     BorderThickness="0" 
+                     Content="Change cities"
+                     Click="ChangeCitiesButtonClick" />
+            <Popup IsLightDismissEnabled="True" Name="ChangeCitiesDropDown" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <StackPanel Width="200" Background="DarkGray" >
+                    <ComboBox PlaceholderText="Select from city:" HorizontalAlignment="Stretch">
+                        <ComboBoxItem>City1</ComboBoxItem>
+                        <ComboBoxItem>City2</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox PlaceholderText="Select to city:">
+                        <ComboBoxItem>City1</ComboBoxItem>
+                        <ComboBoxItem>City2</ComboBoxItem>
+                    </ComboBox>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Ok"  BorderThickness="0" />
+                        <Button Content="Cancel" BorderThickness="0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Popup>
+        </StackPanel>
+        <StackPanel 
+            Grid.Row="0"
+            Grid.Column="2"
+            Width="200">
+            <Button  FontSize="20"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Stretch"
+                     BorderThickness="0" 
+                     Content="Options"
+                     Click="OptionsButtonClick" />
+            <Popup IsLightDismissEnabled="True" Name="OptionsDropDown" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <StackPanel Width="200" Background="DarkGray" >
+                    <Button Content="Invite friends"  BorderThickness="0" HorizontalAlignment="Stretch" />
+                    <Button Content="Rate Patuvalnik"  BorderThickness="0" HorizontalAlignment="Stretch" />
+                    <Button Content="Log out" BorderThickness="0" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+            </Popup>
+        </StackPanel>
+      
+
         <views:TripsView DataContext="{Binding TripsFromTo}"
-                         Grid.Row="2"
+                         Grid.Row="1"
                          Grid.Column="0"
                          />
         <views:TripsView DataContext="{Binding TripsToFrom}"
-                         Grid.Row="2"
+                         Grid.Row="1"
                          Grid.Column="1"
                          />
         <views:TripsView DataContext="{Binding TripsFrom}"
-                         Grid.Row="2"
+                         Grid.Row="1"
                          Grid.Column="2"
                          />
         <views:TripsView DataContext="{Binding TripsTo}"
-                         Grid.Row="2"
+                         Grid.Row="1"
                          Grid.Column="3"
                          />
     </Grid>

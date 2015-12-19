@@ -26,5 +26,30 @@ namespace Patuvalnik
         {
             this.InitializeComponent();
         }
+
+        private void FeedButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.feedDropDown.IsOpen = true;
+        }
+
+        private void UseCurrentLocation(object sender, RoutedEventArgs e)
+        {
+            this.feedDropDown.IsOpen = false;
+        }
+
+        private void RateDriver(object sender, RoutedEventArgs e)
+        {
+            this.feedDropDown.IsOpen = false;
+        }
+
+        private void ChangeCitiesButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.ChangeCitiesDropDown.IsOpen = true;
+        }
+
+        private void OptionsButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.OptionsDropDown.IsOpen = true;
+        }
     }
 }
