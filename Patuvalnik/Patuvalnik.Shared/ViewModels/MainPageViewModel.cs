@@ -10,6 +10,7 @@
     public class MainPageViewModel : BaseViewModel
     {
         private IDataProvider dataProvider;
+        private List<City> cities;
 
         public MainPageViewModel()
         {
@@ -22,6 +23,10 @@
             this.GetCities();
         }
 
+
+        public City FromCity { get; set; }
+        public City ToCity { get; set; }
+
         public TripsViewModel TripsFromTo { get; set; }
 
         public TripsViewModel TripsToFrom { get; set; }
@@ -30,7 +35,20 @@
 
         public TripsViewModel TripsTo { get; set; }
 
-        public List<City> Cities { get; set; }
+        public List<City> Cities
+        {
+            get
+            {
+                return this.cities;
+            }
+            set
+            {
+                this.cities = value;
+                this.FromCity = this.cities.First();
+                this.ToCity = this.cities.Last();
+                this.NotifyPropertyChanged("Cities");
+            }
+        }
 
         private async void GetCities()
         {

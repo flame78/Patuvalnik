@@ -60,13 +60,17 @@
                     <StackPanel Width="200" 
                                 Background="DarkGray" >
                         <ComboBox PlaceholderText="Select from city:" 
-                                  HorizontalAlignment="Stretch">
-                            <ComboBoxItem>City1</ComboBoxItem>
-                            <ComboBoxItem>City2</ComboBoxItem>
+                                  HorizontalAlignment="Stretch"
+                                  ItemsSource="{Binding Cities}"
+                                  DisplayMemberPath="Name"
+                                  SelectedItem="{Binding FromCity}">
                         </ComboBox>
-                        <ComboBox PlaceholderText="Select to city:">
-                            <ComboBoxItem>City1</ComboBoxItem>
-                            <ComboBoxItem>City2</ComboBoxItem>
+                        <ComboBox 
+                                  PlaceholderText="Select to city:"
+                                  HorizontalAlignment="Stretch"
+                                  ItemsSource="{Binding Cities}"
+                                  DisplayMemberPath="Name"
+                                  SelectedItem="{Binding ToCity}">
                         </ComboBox>
                         <StackPanel Orientation="Horizontal">
                             <Button Content="Ok"  
