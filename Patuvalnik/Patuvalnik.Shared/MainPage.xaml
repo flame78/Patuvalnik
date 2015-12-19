@@ -20,88 +20,103 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition />
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-
-        <StackPanel  Grid.Row="0"
-                     Grid.Column="0" 
-                     Width="170">
-            <Button  FontSize="20"
-                     VerticalAlignment="Center"
-                     HorizontalAlignment="Stretch"
-                     BorderThickness="0" 
-                     Content="Feed"
-                     Click="FeedButtonClick" />
-            <Popup IsLightDismissEnabled="True" Name="feedDropDown" >
-                <StackPanel Background="DarkGray" >
-                    <Button BorderThickness="0" Content="Use current location" HorizontalAlignment="Stretch" Click="UseCurrentLocation" />
-                    <Button BorderThickness="0" Content="Rate driver" HorizontalAlignment="Stretch" Click="RateDriver" />
-                </StackPanel>
-            </Popup>
-        </StackPanel>
-
-        <StackPanel 
-            Grid.Row="0"
-            Grid.Column="1"
-            Width="200">
-            <Button  FontSize="20"
-                     VerticalAlignment="Center"
-                     HorizontalAlignment="Stretch"
-                     BorderThickness="0" 
-                     Content="Change cities"
-                     Click="ChangeCitiesButtonClick" />
-            <Popup IsLightDismissEnabled="True" Name="ChangeCitiesDropDown" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <StackPanel Width="200" Background="DarkGray" >
-                    <ComboBox PlaceholderText="Select from city:" HorizontalAlignment="Stretch">
-                        <ComboBoxItem>City1</ComboBoxItem>
-                        <ComboBoxItem>City2</ComboBoxItem>
-                    </ComboBox>
-                    <ComboBox PlaceholderText="Select to city:">
-                        <ComboBoxItem>City1</ComboBoxItem>
-                        <ComboBoxItem>City2</ComboBoxItem>
-                    </ComboBox>
-                    <StackPanel Orientation="Horizontal">
-                        <Button Content="Ok"  BorderThickness="0" />
-                        <Button Content="Cancel" BorderThickness="0"/>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+            <StackPanel Width="170" 
+                        HorizontalAlignment="Left">
+                <Button FontSize="20" 
+                        VerticalAlignment="Center" 
+                        HorizontalAlignment="Left" 
+                        BorderThickness="0" 
+                        Content="Feed"
+                        Click="FeedButtonClick" />
+                <Popup IsLightDismissEnabled="True" 
+                       Name="FeedDropDown" >
+                    <StackPanel Background="DarkGray" >
+                        <Button BorderThickness="0" 
+                                Content="Use current location" 
+                                HorizontalAlignment="Stretch" 
+                                Click="UseCurrentLocation" />
+                        <Button BorderThickness="0" 
+                                Content="Rate driver" 
+                                HorizontalAlignment="Stretch" 
+                                Click="RateDriver" />
                     </StackPanel>
-                </StackPanel>
-            </Popup>
-        </StackPanel>
-        <StackPanel 
-            Grid.Row="0"
-            Grid.Column="2"
-            Width="200">
-            <Button  FontSize="20"
-                     VerticalAlignment="Center"
-                     HorizontalAlignment="Stretch"
-                     BorderThickness="0" 
-                     Content="Options"
-                     Click="OptionsButtonClick" />
-            <Popup IsLightDismissEnabled="True" Name="OptionsDropDown" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <StackPanel Width="200" Background="DarkGray" >
-                    <Button Content="Invite friends"  BorderThickness="0" HorizontalAlignment="Stretch" />
-                    <Button Content="Rate Patuvalnik"  BorderThickness="0" HorizontalAlignment="Stretch" />
-                    <Button Content="Log out" BorderThickness="0" HorizontalAlignment="Stretch"/>
-                </StackPanel>
-            </Popup>
-        </StackPanel>
-      
+                </Popup>
+            </StackPanel>
+            <StackPanel Width="200" HorizontalAlignment="Center">
+                <Button FontSize="20"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Stretch"
+                        BorderThickness="0" 
+                        Content="Change cities"
+                        Click="ChangeCitiesButtonClick" />
+                <Popup IsLightDismissEnabled="True" 
+                       Name="ChangeCitiesDropDown" 
+                       HorizontalAlignment="Stretch" 
+                       VerticalAlignment="Stretch">
+                    <StackPanel Width="200" 
+                                Background="DarkGray" >
+                        <ComboBox PlaceholderText="Select from city:" 
+                                  HorizontalAlignment="Stretch">
+                            <ComboBoxItem>City1</ComboBoxItem>
+                            <ComboBoxItem>City2</ComboBoxItem>
+                        </ComboBox>
+                        <ComboBox PlaceholderText="Select to city:">
+                            <ComboBoxItem>City1</ComboBoxItem>
+                            <ComboBoxItem>City2</ComboBoxItem>
+                        </ComboBox>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Ok"  
+                                    BorderThickness="0" />
+                            <Button Content="Cancel" 
+                                    BorderThickness="0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Popup>
+            </StackPanel>
+            <StackPanel Width="200" HorizontalAlignment="Right">
+                <Button FontSize="20"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        BorderThickness="0" 
+                        Content="Options"
+                        Click="OptionsButtonClick" />
+                <Popup IsLightDismissEnabled="True" 
+                       Name="OptionsDropDown" 
+                       HorizontalAlignment="Stretch" 
+                       VerticalAlignment="Stretch">
+                    <StackPanel Width="200" Background="DarkGray" >
+                        <Button Content="Invite friends"  
+                                BorderThickness="0" 
+                                HorizontalAlignment="Stretch" />
+                        <Button Content="Rate Patuvalnik"  
+                                BorderThickness="0" 
+                                HorizontalAlignment="Stretch" />
+                        <Button Content="Log out" 
+                                BorderThickness="0" 
+                                HorizontalAlignment="Stretch"/>
+                    </StackPanel>
+                </Popup>
+            </StackPanel>
+        </Grid>
 
         <views:TripsView DataContext="{Binding TripsFromTo}"
-                         Grid.Row="1"
-                         Grid.Column="0"
+                             Grid.Row="1"
+                             Grid.Column="0"
                          />
         <views:TripsView DataContext="{Binding TripsToFrom}"
-                         Grid.Row="1"
+                             Grid.Row="1"
                          Grid.Column="1"
                          />
         <views:TripsView DataContext="{Binding TripsFrom}"
-                         Grid.Row="1"
+                             Grid.Row="1"
                          Grid.Column="2"
                          />
         <views:TripsView DataContext="{Binding TripsTo}"
-                         Grid.Row="1"
+                             Grid.Row="1"
                          Grid.Column="3"
                          />
     </Grid>

@@ -29,17 +29,17 @@ namespace Patuvalnik
 
         private void FeedButtonClick(object sender, RoutedEventArgs e)
         {
-            this.feedDropDown.IsOpen = true;
+            this.FeedDropDown.IsOpen = true;
         }
 
         private void UseCurrentLocation(object sender, RoutedEventArgs e)
         {
-            this.feedDropDown.IsOpen = false;
+            this.FeedDropDown.IsOpen = false;
         }
 
         private void RateDriver(object sender, RoutedEventArgs e)
         {
-            this.feedDropDown.IsOpen = false;
+            this.FeedDropDown.IsOpen = false;
         }
 
         private void ChangeCitiesButtonClick(object sender, RoutedEventArgs e)
@@ -50,6 +50,6 @@ namespace Patuvalnik
         private void OptionsButtonClick(object sender, RoutedEventArgs e)
         {
             this.OptionsDropDown.IsOpen = true;
-        }
+        } 
     }
 }
