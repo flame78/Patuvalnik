@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Devices.Geolocation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Core;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+﻿ // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Patuvalnik
 {
+    using System;
+
+    using Windows.Devices.Geolocation;
+    using Windows.UI.Core;
+    using Windows.UI.Xaml;
+    using Windows.UI.Xaml.Controls;
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -29,18 +19,51 @@ namespace Patuvalnik
         public MainPage()
         {
             this.InitializeComponent();
-            
-            this.geolocator = new Geolocator();
-            this.geolocator.PositionChanged += OnGeolocationPositionchanged;
+
+            //    this.geolocator = new Geolocator();
+            //    this.geolocator.PositionChanged += OnGeolocationPositionchanged;
+        }
+
+        private async void InitGeolocation()
+        {
+            var geoPosition = await geolocator.GetGeopositionAsync();
+            //  geoPosition.
+        }
+
+        private void FeedButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.FeedDropDown.IsOpen = true;
+        }
+
+        private void UseCurrentLocation(object sender, RoutedEventArgs e)
+        {
+            this.FeedDropDown.IsOpen = false;
+        }
+
+        private void RateDriver(object sender, RoutedEventArgs e)
+        {
+            this.FeedDropDown.IsOpen = false;
+        }
+
+        private void ChangeCitiesButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.ChangeCitiesDropDown.IsOpen = true;
+        }
+
+        private void OptionsButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.OptionsDropDown.IsOpen = true;
         }
 
         private void OnGeolocationPositionchanged(Geolocator sender, PositionChangedEventArgs args)
-        {            
-            Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-            {
-                var lat = args.Position.Coordinate.Latitude;
-                var lon = args.Position.Coordinate.Longitude;
-            });
+        {
+            this.Dispatcher.RunAsync(
+                CoreDispatcherPriority.Normal,
+                () =>
+                    {
+                        var lat = args.Position.Coordinate.Latitude;
+                        var lon = args.Position.Coordinate.Longitude;
+                    });
         }
     }
 }
