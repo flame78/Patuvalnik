@@ -46,7 +46,7 @@
                     </StackPanel>
                 </Popup>
             </StackPanel>
-            <StackPanel Width="200" HorizontalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center">
                 <Button FontSize="20"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Stretch"
@@ -57,8 +57,7 @@
                        Name="ChangeCitiesDropDown" 
                        HorizontalAlignment="Stretch" 
                        VerticalAlignment="Stretch">
-                    <StackPanel Width="200" 
-                                Background="DarkGray" >
+                    <StackPanel Background="DarkGray" >
                         <ComboBox PlaceholderText="Select from city:" 
                                   HorizontalAlignment="Stretch"
                                   ItemsSource="{Binding Cities}"
