@@ -9,7 +9,7 @@
     DataContext="viewModels:TripsViewModel">
 
     <Grid>
-        <ListBox ItemsSource="{Binding Trips}">
+        <ListBox ItemsSource="{Binding Trips}" Margin="0,10,0,0" HorizontalAlignment="Left" Width="1254">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -18,67 +18,77 @@
                             <RowDefinition Height="30"/>
                             <RowDefinition Height="30"/>
                             <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <Image Source="{Binding Driver_profile.User.ProfilePicture}" Height="50" Width="50"
                                Grid.Row="0"
-                               Grid.Column="0"/>
-                        <StackPanel Grid.Row="0"
-                                    Grid.Column="1" 
+                               Grid.Column="0"
+                               HorizontalAlignment="Left"/>
+                        <StackPanel Grid.Row="1"
+                                    Grid.Column="0" 
                                     Orientation="Horizontal">
                             <TextBlock Text="Name: "
+                                       Margin="0,0,5,0"
                                        VerticalAlignment="Center"/>
                             <TextBlock Text="{Binding Driver_profile.User.Name}"
                                        VerticalAlignment="Center"/>
                         </StackPanel>
-                        <StackPanel Grid.Row="1"
+                        <StackPanel Grid.Row="2"
                                     Grid.Column="0" 
                                     Orientation="Horizontal">
                             <TextBlock Text="From city: "
+                                       Margin="0,0,5,0"
                                        VerticalAlignment="Center"/>
                             <TextBlock Text="{Binding FromCity}"
                                        VerticalAlignment="Center"/>
                         </StackPanel>
-                        <StackPanel Grid.Row="1"
-                                    Grid.Column="1" 
+                        <StackPanel Grid.Row="3"
+                                    Grid.Column="0" 
                                     Orientation="Horizontal">
                             <TextBlock Text="To city: "
+                                       Margin="0,0,5,0"
                                        VerticalAlignment="Center"/>
                             <TextBlock Text="{Binding ToCity}"
                                        VerticalAlignment="Center"/>
                         </StackPanel>
-                        <StackPanel Grid.Row="2"
+                        <StackPanel Grid.Row="4"
                                     Grid.Column="0" 
                                     Orientation="Horizontal">
                             <TextBlock Text="Start time: "
+                                       Margin="0,0,5,0"
                                        VerticalAlignment="Center"/>
                             <TextBlock Text="{Binding Start_time}"
                                        VerticalAlignment="Center"/>
                         </StackPanel>
-                        <StackPanel Grid.Row="2"
-                                    Grid.Column="1" 
+                        <StackPanel Grid.Row="5"
+                                    Grid.Column="0" 
                                     Orientation="Horizontal">
                             <TextBlock Text="End time: "
+                                       Margin="0,0,5,0"
                                        VerticalAlignment="Center"/>
                             <TextBlock Text="{Binding End_time}"
                                        VerticalAlignment="Center"/>
                         </StackPanel>
-                        <StackPanel Grid.Row="3"
+                        <StackPanel Grid.Row="6"
                                     Grid.Column="0" 
                                     Orientation="Horizontal">
                             <TextBlock Text="Seats left: "
+                                       Margin="0,0,5,0"
                                        VerticalAlignment="Center"/>
                             <TextBlock Text="{Binding Seats_left}"
                                        VerticalAlignment="Center"/>
                         </StackPanel>
-
-                        <StackPanel Grid.Row="3"
-                                    Grid.Column="1" 
+                        <StackPanel Grid.Row="7"
+                                    Grid.Column="0" 
                                     Orientation="Horizontal">
                             <TextBlock Text="Price: "
+                                       Margin="0,0,5,0"
                                        VerticalAlignment="Center"/>
                             <TextBlock Text="{Binding Price}"
                                        VerticalAlignment="Center"/>
