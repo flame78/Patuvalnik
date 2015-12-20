@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="5530bd84-cc52-4c78-a452-f34c2ce51531" Publisher="CN=Plamen Stepanyan" Version="1.0.0.0" />
+  <Identity Name="f85c37bc-a6d1-4b67-960f-c01ed1d00e55" Publisher="CN=Plamen Stepanyan" Version="1.0.0.0" />
   <Properties>
     <DisplayName>Patuvalnik.Windows</DisplayName>
     <PublisherDisplayName>Plamen Stepanyan</PublisherDisplayName>
@@ -22,7 +22,6 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
-    <Capability Name="internetClientServer" />
     <DeviceCapability Name="location" />
   </Capabilities>
 </Package>

@@ -6,32 +6,37 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="using:Patuvalnik.PartialViews"
-    xmlns:ap="using:Patuvalnik.AttachedProporties"
     xmlns:vm="using:Patuvalnik.ViewModels"
     mc:Ignorable="d">
+
     <Page.DataContext>
         <vm:MainPageViewModel />
     </Page.DataContext>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
+            <ColumnDefinition/>
             <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+        <Grid Grid.Row="0" 
+              Grid.Column="0" 
+              Grid.ColumnSpan="4" 
+              Background="Gray">
             <StackPanel Width="170" 
-                        HorizontalAlignment="Left">
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
                 <Button FontSize="20" 
                         VerticalAlignment="Center" 
                         HorizontalAlignment="Left" 
                         BorderThickness="0" 
                         Content="Feed"
-                        Click="FeedButtonClick" />
+                        Click="FeedButtonClick"
+                        Background="Gray"/>
                 <Popup IsLightDismissEnabled="True" 
                        Name="FeedDropDown" >
                     <StackPanel Background="DarkGray" >
@@ -46,53 +51,52 @@
                     </StackPanel>
                 </Popup>
             </StackPanel>
-            <StackPanel Width="200" HorizontalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
                 <Button FontSize="20"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Stretch"
                         BorderThickness="0" 
+                        Background="Gray"
                         Content="Change cities"
                         Click="ChangeCitiesButtonClick" />
                 <Popup IsLightDismissEnabled="True" 
                        Name="ChangeCitiesDropDown" 
                        HorizontalAlignment="Stretch" 
                        VerticalAlignment="Stretch">
-                    <StackPanel Width="200" 
-                                Background="DarkGray" >
+                    <StackPanel Background="DarkGray" >
                         <ComboBox PlaceholderText="Select from city:" 
                                   HorizontalAlignment="Stretch"
                                   ItemsSource="{Binding Cities}"
                                   DisplayMemberPath="Name"
-                                  SelectedItem="{Binding FromCity}">
+                                  SelectedItem="{Binding FromCity, Mode=TwoWay}">
                         </ComboBox>
                         <ComboBox 
                                   PlaceholderText="Select to city:"
                                   HorizontalAlignment="Stretch"
                                   ItemsSource="{Binding Cities}"
                                   DisplayMemberPath="Name"
-                                  SelectedItem="{Binding ToCity}">
+                                  SelectedItem="{Binding ToCity, Mode=TwoWay}"
+                                  >
                         </ComboBox>
-                        <StackPanel Orientation="Horizontal">
-                            <Button Content="Ok"  
-                                    BorderThickness="0" />
-                            <Button Content="Cancel" 
-                                    BorderThickness="0"/>
-                        </StackPanel>
                     </StackPanel>
                 </Popup>
             </StackPanel>
-            <StackPanel Width="200" HorizontalAlignment="Right">
+            <StackPanel HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Width="130">
                 <Button FontSize="20"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Right"
                         BorderThickness="0" 
                         Content="Options"
-                        Click="OptionsButtonClick" />
+                        Click="OptionsButtonClick" 
+                        Background="Gray"/>
                 <Popup IsLightDismissEnabled="True" 
                        Name="OptionsDropDown" 
-                       HorizontalAlignment="Stretch" 
+                        HorizontalAlignment="Left"
                        VerticalAlignment="Stretch">
-                    <StackPanel Width="200" Background="DarkGray" >
+                    <StackPanel Width="130" Background="DarkGray" >
                         <Button Content="Invite friends"  
                                 BorderThickness="0" 
                                 HorizontalAlignment="Stretch" />

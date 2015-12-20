@@ -1,10 +1,5 @@
-﻿ // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
-
-namespace Patuvalnik
+﻿namespace Patuvalnik
 {
-    using System;
-
-    using Windows.Devices.Geolocation;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
 
@@ -13,8 +8,6 @@ namespace Patuvalnik
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private Geolocator geolocator;
-
         public MainPage()
         {
             this.InitializeComponent();

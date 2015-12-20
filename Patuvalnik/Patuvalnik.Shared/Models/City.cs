@@ -11,7 +11,7 @@ namespace Patuvalnik.Models
 
         public string Name { get; set; }
 
-        public string         LocalizedName{ get; set; }
+        public string LocalizedName{ get; set; }
 
         public int Priority { get; set; }
 

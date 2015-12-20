@@ -13,6 +13,9 @@
     {
         private IDataProvider dataProvider;
         private List<City> cities;
+        private TripsViewModel tripsFromTo;
+        private City fromCity;
+        private City toCity;
 
         public MainPageViewModel()
         {
@@ -26,10 +29,32 @@
             this.GetDataAsync();
         }
 
-        public City FromCity { get; set; }
-        public City ToCity { get; set; }
+        public City FromCity
+        {
+            get
+            {
+                return this.fromCity;
+            }
+            set
+            {
+                this.fromCity = value;
+                this.GetDataAsync();
+                NotifyPropertyChanged("FromCity");
+            }
+        }
+        public City ToCity {
+            get
+            {
+                return this.toCity;
+            }
+            set
+            {
+                this.toCity = value;
+                this.GetDataAsync();
+                NotifyPropertyChanged("ToCity");
 
-        public int MyProperty { get; set; }
+            }
+        }
 
         public TripsViewModel TripsFromTo { get; set; }
 
@@ -49,31 +74,25 @@
             {
                 this.cities = value;
                 this.FromCity = this.cities.First();
-                this.ToCity = this.cities.Last();
+                this.ToCity = this.cities[2];
                 this.NotifyPropertyChanged("Cities");
             }
         }
 
         private async void GetDataAsync()
         {
-            this.Cities = await this.dataProvider.GetCities();
+            if (this.Cities.Count==0)
+            {
+                this.Cities = await this.dataProvider.GetCities();
+            }
             var cities = this.Cities.ToDictionary(city => city.Id, city => city.Name);
 
             var geoPosition = await this.InitGeolocationAsync();
 
             this.TripsFromTo.Trips = await GetTripsAsync(cities, FromCity.Id, ToCity.Id);
-            this.NotifyPropertyChanged("TripsFromTo");
-
-
             this.TripsToFrom.Trips = await GetTripsAsync(cities, ToCity.Id, FromCity.Id);
-            this.NotifyPropertyChanged("TripsToFrom");
-
-
             this.TripsFrom.Trips = await GetTripsAsync(cities, FromCity.Id, 0);
-            this.NotifyPropertyChanged("TripsFrom");
-
             this.TripsTo.Trips = await GetTripsAsync(cities, 0, ToCity.Id);
-            this.NotifyPropertyChanged("TripsTo");
         }
 
 

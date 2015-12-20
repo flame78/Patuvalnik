@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="7b14a086-d107-4cf0-bf42-6f31378f6f19" Publisher="CN=Plamen Stepanyan" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="7b14a086-d107-4cf0-bf42-6f31378f6f19" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="0397cd22-ecd8-4db9-b728-825a6e218aa2" Publisher="CN=Plamen Stepanyan" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="0397cd22-ecd8-4db9-b728-825a6e218aa2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Patuvalnik.WindowsPhone</DisplayName>
     <PublisherDisplayName>Plamen Stepanyan</PublisherDisplayName>

@@ -17,12 +17,8 @@
             }
             set
             {
-                if (value != null & value.Count > 0)
-                {
-                    this.trips.Clear();
-      //              this.trips.AddRange(value);
-                    //       this.NotifyPropertyChanged("Trips");
-                }
+                this.trips = value;
+                this.NotifyPropertyChanged("Trips");
             }
         }
 
