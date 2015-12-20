@@ -16,6 +16,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)AttachedProporties\CitiesExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Contracts\IDataProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataProvider\VrumDataProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">

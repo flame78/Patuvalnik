@@ -7,8 +7,10 @@
     using Patuvalnik.Contracts;
     using Patuvalnik.Models;
     using Patuvalnik.REST;
+    using Patuvalnik.Commands;
     using Windows.Devices.Geolocation;
     using System.Threading.Tasks;
+    using System.Windows.Input;
     public class MainPageViewModel : BaseViewModel
     {
         private IDataProvider dataProvider;
@@ -16,6 +18,11 @@
         private TripsViewModel tripsFromTo;
         private City fromCity;
         private City toCity;
+
+        private ICommand commandUseCurrentLocation;
+        public string DisplayName { get; set; }
+
+
 
         public MainPageViewModel()
         {
@@ -42,7 +49,8 @@
                 NotifyPropertyChanged("FromCity");
             }
         }
-        public City ToCity {
+        public City ToCity
+        {
             get
             {
                 return this.toCity;
@@ -73,22 +81,73 @@
             set
             {
                 this.cities = value;
-                this.FromCity = this.cities[3];
-                this.ToCity = this.cities[2];
                 this.NotifyPropertyChanged("Cities");
             }
         }
 
+        public ICommand UseCurrentLocation
+        {
+            get
+            {
+                if (this.commandUseCurrentLocation == null)
+                {
+                    this.commandUseCurrentLocation =
+                        new RelayCommand(this.PerformUseCurrentLocation);
+                }
+                return this.commandUseCurrentLocation;
+            }
+
+        }
+
+        private async void PerformUseCurrentLocation()
+        {
+            var geoPosition = await this.InitGeolocationAsync();
+
+            double minDistance = double.MaxValue;
+
+            City closestCity = new City();
+
+            foreach (var city in Cities)
+            {
+                var currentDistance = CalculateDistance(geoPosition.Coordinate.Latitude, geoPosition.Coordinate.Longitude, city.Lat, city.Lng);
+                if (minDistance > currentDistance)
+                {
+                    minDistance = currentDistance;
+                    closestCity = city;
+                }
+            }
+
+            this.FromCity = closestCity;
+        }
+
+        private double CalculateDistance(double x1, double y1, double x2, double y2)
+        {
+            double distance;
+
+            double distanceX = x1 - x2;
+            double distanceY = y1 - y2;
+
+            distance = Math.Sqrt((distanceX * distanceX) + (distanceY * distanceY));
+            return distance;
+        }
+
         private async void GetDataAsync()
         {
-            if (this.Cities.Count==0)
+            if (this.Cities.Count == 0)
             {
-                this.Cities = await this.dataProvider.GetCities();
+                var cs = await this.dataProvider.GetCities();
+                this.Cities = cs;
             }
             var cities = this.Cities.ToDictionary(city => city.Id, city => city.Name);
 
-            var geoPosition = await this.InitGeolocationAsync();
-
+            if (ToCity == null)
+            {
+                this.ToCity = this.Cities[2];
+            }
+            if (FromCity == null)
+            {
+                this.FromCity = this.Cities[1];
+            }
             this.TripsFromTo.Trips = await GetTripsAsync(cities, FromCity.Id, ToCity.Id);
             this.TripsToFrom.Trips = await GetTripsAsync(cities, ToCity.Id, FromCity.Id);
             this.TripsFrom.Trips = await GetTripsAsync(cities, FromCity.Id, 0);

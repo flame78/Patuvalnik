@@ -43,7 +43,7 @@
                         <Button BorderThickness="0" 
                                 Content="Use current location" 
                                 HorizontalAlignment="Stretch" 
-                                Click="UseCurrentLocation" />
+                                Command="{Binding UseCurrentLocation}"/>
                         <Button BorderThickness="0" 
                                 Content="Rate driver" 
                                 HorizontalAlignment="Stretch" 
