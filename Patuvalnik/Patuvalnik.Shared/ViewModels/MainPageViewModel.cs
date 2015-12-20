@@ -73,7 +73,7 @@
             set
             {
                 this.cities = value;
-                this.FromCity = this.cities.First();
+                this.FromCity = this.cities[3];
                 this.ToCity = this.cities[2];
                 this.NotifyPropertyChanged("Cities");
             }

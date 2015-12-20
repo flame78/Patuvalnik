@@ -1,5 +1,6 @@
 ﻿namespace Patuvalnik
 {
+    using ViewModels;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
 
@@ -21,6 +22,8 @@
         private void UseCurrentLocation(object sender, RoutedEventArgs e)
         {
             this.FeedDropDown.IsOpen = false;
+            var mpvm = this.DataContext as MainPageViewModel;
+            mpvm.FromCity = mpvm.Cities[0];
         }
 
         private void RateDriver(object sender, RoutedEventArgs e)
