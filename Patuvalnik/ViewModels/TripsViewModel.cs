@@ -18,8 +18,6 @@
             set
             {
                 this.trips = value;
-       //         this.trips.Clear();
-       //         this.trips.AddRange(value);
                 this.NotifyPropertyChanged("Trips");
             }
         }

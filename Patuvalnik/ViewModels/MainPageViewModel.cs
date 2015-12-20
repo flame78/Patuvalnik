@@ -38,6 +38,7 @@
             set
             {
                 this.fromCity = value;
+                this.GetDataAsync();
                 NotifyPropertyChanged("FromCity");
             }
         }
@@ -49,6 +50,7 @@
             set
             {
                 this.toCity = value;
+                this.GetDataAsync();
                 NotifyPropertyChanged("ToCity");
 
             }
@@ -79,24 +81,18 @@
 
         private async void GetDataAsync()
         {
-            this.Cities = await this.dataProvider.GetCities();
+            if (this.Cities.Count==0)
+            {
+                this.Cities = await this.dataProvider.GetCities();
+            }
             var cities = this.Cities.ToDictionary(city => city.Id, city => city.Name);
 
             var geoPosition = await this.InitGeolocationAsync();
 
             this.TripsFromTo.Trips = await GetTripsAsync(cities, FromCity.Id, ToCity.Id);
-            this.NotifyPropertyChanged("TripsFromTo");
-
-
             this.TripsToFrom.Trips = await GetTripsAsync(cities, ToCity.Id, FromCity.Id);
-            this.NotifyPropertyChanged("TripsToFrom");
-
-
             this.TripsFrom.Trips = await GetTripsAsync(cities, FromCity.Id, 0);
-            this.NotifyPropertyChanged("TripsFrom");
-
             this.TripsTo.Trips = await GetTripsAsync(cities, 0, ToCity.Id);
-            this.NotifyPropertyChanged("TripsTo");
         }
 
 

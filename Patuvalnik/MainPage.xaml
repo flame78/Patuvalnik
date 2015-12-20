@@ -63,21 +63,16 @@
                                   HorizontalAlignment="Stretch"
                                   ItemsSource="{Binding Cities}"
                                   DisplayMemberPath="Name"
-                                  SelectedItem="{Binding FromCity}">
+                                  SelectedItem="{Binding FromCity, Mode=TwoWay}">
                         </ComboBox>
                         <ComboBox 
                                   PlaceholderText="Select to city:"
                                   HorizontalAlignment="Stretch"
                                   ItemsSource="{Binding Cities}"
                                   DisplayMemberPath="Name"
-                                  SelectedItem="{Binding ToCity}">
+                                  SelectedItem="{Binding ToCity, Mode=TwoWay}"
+                                  >
                         </ComboBox>
-                        <StackPanel Orientation="Horizontal">
-                            <Button Content="Ok"  
-                                    BorderThickness="0" />
-                            <Button Content="Cancel" 
-                                    BorderThickness="0"/>
-                        </StackPanel>
                     </StackPanel>
                 </Popup>
             </StackPanel>
