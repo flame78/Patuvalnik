@@ -18,85 +18,13 @@
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private const string dbName = "Patuvalnik.db";
-
-        public List<KeyString> data { get; set; }
+        
 
         public MainPage()
         {
             this.InitializeComponent();
-
-            this.NavigationCacheMode = NavigationCacheMode.Required;
         }
-
-        protected async override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            bool dbExists = await CheckDbAsync(dbName);
-            if (!dbExists)
-            {
-                await CreateDatabaseAsync();
-                await AddTripsAsync();
-            }
-
-            SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
-            var query = conn.Table<KeyString>();
-            data = await query.ToListAsync();
-        }
-
-        #region SQLite utils
-        private async Task<bool> CheckDbAsync(string dbName)
-        {
-            bool dbExist = true;
-
-            try
-            {
-                StorageFile sf = await ApplicationData.Current.LocalFolder.GetFileAsync(dbName);
-            }
-            catch (Exception)
-            {
-                dbExist = false;
-            }
-
-            return dbExist;
-        }
-
-        private async Task CreateDatabaseAsync()
-        {
-            SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
-            await conn.CreateTableAsync<KeyString>();
-        }
-
-        private async Task AddTripsAsync()
-        {
-            var list = new List<KeyString>()
-            {
-                new KeyString()
-                {
-                }
-            };
-
-            SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
-            await conn.InsertAllAsync(list);
-        }
-
-        private async Task DeleteTripsAsync(Trip trip)
-        {
-            SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
-
-            if (trip != null)
-            {
-                await conn.DeleteAsync(trip);
-            }
-        }
-
-        private async Task DropTableAsync()
-        {
-            SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
-            await conn.DropTableAsync<Trip>();
-        }
-
-        #endregion SQLite utils
-
+        
         private void FeedButtonClick(object sender, RoutedEventArgs e)
         {
             this.FeedDropDown.IsOpen = true;

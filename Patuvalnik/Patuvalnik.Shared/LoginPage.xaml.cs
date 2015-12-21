@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Patuvalnik.DataProvider;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,8 +28,11 @@ namespace Patuvalnik
             this.InitializeComponent();
         }
 
-        private void LogInWithFbButtonClick(object sender, RoutedEventArgs e)
+        private async void LogInWithFbButtonClick(object sender, RoutedEventArgs e)
         {
+            var sql = new SQLiteDataProvider();
+            sql.InitSql();
+
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(MainPage));
         }
