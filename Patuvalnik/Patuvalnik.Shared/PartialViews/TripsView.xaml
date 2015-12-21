@@ -9,7 +9,9 @@
     DataContext="viewModels:TripsViewModel">
 
     <Grid>
-        <ListBox ItemsSource="{Binding Trips}" HorizontalAlignment="Left">
+        <ListBox ItemsSource="{Binding Trips}" 
+                 HorizontalAlignment="Left"
+                 SelectionChanged="ShowDetails">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

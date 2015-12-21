@@ -1,0 +1,94 @@
+﻿<Page
+    x:Class="Patuvalnik.TripDetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Patuvalnik"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <TextBlock FontSize="20" Text="Trip details"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <Image Source="{Binding Driver_profile.User.ProfilePicture}" Height="50" Width="50" />
+        <StackPanel
+                                    Orientation="Horizontal">
+            <TextBlock FontSize="15" Text="Name: "
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+            <TextBlock FontSize="15" Text="{Binding Driver_profile.User.Name}"
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel 
+                                    Orientation="Horizontal">
+            <TextBlock FontSize="15" Text="From: "
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+            <TextBlock FontSize="15" Text="{Binding FromCity}"
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel
+                                    Orientation="Horizontal">
+            <TextBlock FontSize="15" Text="To: "
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+            <TextBlock FontSize="15" Text="{Binding ToCity}"
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel 
+                                    Orientation="Horizontal">
+            <TextBlock FontSize="15" Text="Start time: "
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+            <TextBlock FontSize="15" Text="{Binding Start_time}"
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel 
+                                    Orientation="Horizontal">
+            <TextBlock FontSize="15" Text="End time: "
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+            <TextBlock FontSize="15" Text="{Binding End_time}"
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel
+                                    Orientation="Horizontal">
+            <TextBlock FontSize="15" Text="Seats left: "
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+            <TextBlock FontSize="15" Text="{Binding Seats_left}"
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel
+                                    Orientation="Horizontal">
+            <TextBlock FontSize="15" Text="Price: "
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+            <TextBlock FontSize="15" Text="{Binding Price}"
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock FontSize="15" Text="Message: "
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+            <TextBlock FontSize="15" Text="{Binding About}"
+                           HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel
+            Orientation="Horizontal">
+            <Button Content="Join trip" Click="JoinTrip" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel
+            Orientation="Horizontal">
+            <Button Content="Back" Click="BackToFeed" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </StackPanel>
+</Page>

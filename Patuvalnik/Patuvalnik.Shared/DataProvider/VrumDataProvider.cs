@@ -66,5 +66,20 @@
 
             return resultObj;
         }
+
+        public async Task<Trip> GetTripDetails( int tripId)
+        {
+            string reqUri = String.Empty;
+            reqUri = String.Format(ReqUri, "trips/{0}.json");
+            reqUri = String.Format(reqUri, tripId);
+
+            var uri = new Uri(reqUri);
+
+            var response = await this.client.GetStringAsync(uri);
+
+            var resultObj = JsonConvert.DeserializeObject<Trip>(response);
+
+            return resultObj;
+        } 
     }
 }

@@ -30,6 +30,8 @@ namespace Patuvalnik.Models
 
         public string Status { get; set; }
 
+        public string About { get; set; }
+
         public string Confirm_type { get; set; }
 
         public DateTime? Trip_time { get; set; }
