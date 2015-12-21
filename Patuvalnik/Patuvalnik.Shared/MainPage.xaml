@@ -107,7 +107,8 @@
                                 HorizontalAlignment="Stretch" />
                         <Button Content="Log out" 
                                 BorderThickness="0" 
-                                HorizontalAlignment="Stretch"/>
+                                HorizontalAlignment="Stretch"
+                                Click="LogOutClick"/>
                     </StackPanel>
                 </Popup>
             </StackPanel>

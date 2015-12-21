@@ -27,6 +27,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\City.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\DriverProfile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\KeyString.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Trip.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PartialViews\TripsView.xaml.cs">

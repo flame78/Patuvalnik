@@ -18,9 +18,9 @@
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private const string dbName = "Trips.db";
+        private const string dbName = "Patuvalnik.db";
 
-        public List<Trip> trips { get; set; }
+        public List<KeyString> data { get; set; }
 
         public MainPage()
         {
@@ -31,16 +31,16 @@
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-            //bool dbExists = await CheckDbAsync(dbName);
-            //if (!dbExists)
-            //{
-            //    await CreateDatabaseAsync();
-            //    await AddTripsAsync();
-            //}
+            bool dbExists = await CheckDbAsync(dbName);
+            if (!dbExists)
+            {
+                await CreateDatabaseAsync();
+                await AddTripsAsync();
+            }
 
-            //SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
-            //var query = conn.Table<Trip>();
-            //trips = await query.ToListAsync();
+            SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
+            var query = conn.Table<KeyString>();
+            data = await query.ToListAsync();
         }
 
         #region SQLite utils
@@ -63,14 +63,14 @@
         private async Task CreateDatabaseAsync()
         {
             SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
-            await conn.CreateTableAsync<Trip>();
+            await conn.CreateTableAsync<KeyString>();
         }
 
         private async Task AddTripsAsync()
         {
-            var list = new List<Trip>()
+            var list = new List<KeyString>()
             {
-                new Trip()
+                new KeyString()
                 {
                 }
             };
@@ -125,6 +125,12 @@
         private void HideChangeCiries(object sender, RoutedEventArgs e)
         {
             this.ChangeCitiesDropDown.IsOpen = false;
+        }
+
+        private void LogOutClick(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(LoginPage));
         }
     }
 }
