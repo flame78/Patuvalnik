@@ -142,7 +142,7 @@
 
             if (ToCity == null)
             {
-                this.ToCity = this.Cities[2];
+                this.ToCity = this.Cities[0];
             }
             if (FromCity == null)
             {

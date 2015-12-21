@@ -1,4 +1,5 @@
 ﻿using Patuvalnik.DataProvider;
+using Patuvalnik.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,16 +24,33 @@ namespace Patuvalnik
     /// </summary>
     public sealed partial class LoginPage : Page
     {
+        public SQLiteDataProvider Sql { get; private set; }
+
         public LoginPage()
         {
+            Sql = new SQLiteDataProvider();
+            Sql.InitSql();
+            CheckIsLoged();
             this.InitializeComponent();
+        }
+
+        private async void CheckIsLoged()
+        {
+            var data = await Sql.GetData();
+            if (data!= null && data.Where(k => k.Key=="Log").FirstOrDefault() != null)
+            {
+                NavigateToMainPage();
+            }
         }
 
         private async void LogInWithFbButtonClick(object sender, RoutedEventArgs e)
         {
-            var sql = new SQLiteDataProvider();
-            sql.InitSql();
+            Sql.AddKeyStringAsync(new KeyString { Key="Log", Str="Access Token" });
+            NavigateToMainPage();
+        }
 
+        private void NavigateToMainPage()
+        {
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(MainPage));
         }

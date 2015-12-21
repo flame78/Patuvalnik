@@ -11,21 +11,43 @@ namespace Patuvalnik.DataProvider
     public class SQLiteDataProvider
     {
         private const string dbName = "Patuvalnik.db";
-
         private SQLiteAsyncConnection connection;
+
+        private SQLiteAsyncConnection Connection
+        {
+            get { if (this.connection == null)
+                {
+                    this.connection = new SQLiteAsyncConnection(dbName);
+                }
+                return this.connection;
+            }
+        }
 
         public List<KeyString> data { get; set; }
 
         public SQLiteDataProvider()
         {
+            this.InitSql();
         }
 
         public async Task<List<KeyString>> GetData()
         {
-            var query = connection.Table<KeyString>();
+            var query = Connection.Table<KeyString>();
             data = await query.ToListAsync();
 
             return data;
+        }
+
+        public async Task AddKeyStringAsync(KeyString value)
+        {
+           
+            await Connection.InsertAsync(value);
+        }
+
+        public async Task RemoveKeyStringAsync(KeyString value)
+        {
+
+            await Connection.DeleteAsync(value);
         }
 
         public async void InitSql()
@@ -34,11 +56,12 @@ namespace Patuvalnik.DataProvider
             if (!dbExists)
             {
                 CreateDatabaseAsync();
-                AddTripsAsync();
+                AddTableAsync();
             }
 
             connection = new SQLiteAsyncConnection(dbName);
         }
+
         #region SQLite utils
         private async Task<bool> CheckDbAsync(string dbName)
         {
@@ -62,7 +85,7 @@ namespace Patuvalnik.DataProvider
             await conn.CreateTableAsync<KeyString>();
         }
 
-        private async Task AddTripsAsync()
+        private async Task AddTableAsync()
         {
             var list = new List<KeyString>()
             {
@@ -73,22 +96,6 @@ namespace Patuvalnik.DataProvider
 
             SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
             await conn.InsertAllAsync(list);
-        }
-
-        private async Task DeleteTripsAsync(Trip trip)
-        {
-            SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
-
-            if (trip != null)
-            {
-                await conn.DeleteAsync(trip);
-            }
-        }
-
-        private async Task DropTableAsync()
-        {
-            SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
-            await conn.DropTableAsync<Trip>();
         }
 
         #endregion SQLite utils

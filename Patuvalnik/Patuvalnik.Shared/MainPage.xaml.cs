@@ -12,16 +12,20 @@
     using System.Linq;
     using System.Threading.Tasks;
     using Patuvalnik.Models;
-
+    using DataProvider;
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        
 
+        public SQLiteDataProvider Sql { get; private set; }
+
+        
         public MainPage()
         {
+            Sql = new SQLiteDataProvider();
+            Sql.InitSql();
             this.InitializeComponent();
         }
         
@@ -55,8 +59,15 @@
             this.ChangeCitiesDropDown.IsOpen = false;
         }
 
-        private void LogOutClick(object sender, RoutedEventArgs e)
+        private async void LogOutClick(object sender, RoutedEventArgs e)
         {
+            var data = await Sql.GetData();
+            var ks = data.Where(k => k.Key == "Log").FirstOrDefault();
+            if (ks != null)
+            {
+                await Sql.RemoveKeyStringAsync(ks);
+            }
+
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(LoginPage));
         }

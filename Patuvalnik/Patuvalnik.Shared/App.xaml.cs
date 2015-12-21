@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Patuvalnik.DataProvider;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace Patuvalnik
     /// </summary>
     public sealed partial class App : Application
     {
+       
 #if WINDOWS_PHONE_APP
         private TransitionCollection transitions;
 #endif
