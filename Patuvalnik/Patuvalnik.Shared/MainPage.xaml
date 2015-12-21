@@ -43,7 +43,8 @@
                         <Button BorderThickness="0" 
                                 Content="Use current location" 
                                 HorizontalAlignment="Stretch" 
-                                Command="{Binding UseCurrentLocation}"/>
+                                Command="{Binding UseCurrentLocation}"
+                                Click="UseCurrentLocation"/>
                         <Button BorderThickness="0" 
                                 Content="Rate driver" 
                                 HorizontalAlignment="Stretch" 
@@ -64,12 +65,13 @@
                        Name="ChangeCitiesDropDown" 
                        HorizontalAlignment="Stretch" 
                        VerticalAlignment="Stretch">
-                    <StackPanel Background="DarkGray" >
-                        <ComboBox PlaceholderText="Select from city:" 
+                    <StackPanel Background="DarkGray">
+                            <ComboBox PlaceholderText="Select from city:" 
                                   HorizontalAlignment="Stretch"
                                   ItemsSource="{Binding Cities}"
                                   DisplayMemberPath="Name"
-                                  SelectedItem="{Binding FromCity, Mode=TwoWay}">
+                                  SelectedItem="{Binding FromCity, Mode=TwoWay}"
+                                  SelectionChanged="HideChangeCiries">
                         </ComboBox>
                         <ComboBox 
                                   PlaceholderText="Select to city:"
@@ -77,7 +79,7 @@
                                   ItemsSource="{Binding Cities}"
                                   DisplayMemberPath="Name"
                                   SelectedItem="{Binding ToCity, Mode=TwoWay}"
-                                  >
+                                  SelectionChanged="HideChangeCiries">
                         </ComboBox>
                     </StackPanel>
                 </Popup>

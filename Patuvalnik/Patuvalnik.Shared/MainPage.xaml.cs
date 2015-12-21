@@ -31,16 +31,16 @@
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-            bool dbExists = await CheckDbAsync(dbName);
-            if (!dbExists)
-            {
-                await CreateDatabaseAsync();
-                await AddTripsAsync();
-            }
+            //bool dbExists = await CheckDbAsync(dbName);
+            //if (!dbExists)
+            //{
+            //    await CreateDatabaseAsync();
+            //    await AddTripsAsync();
+            //}
 
-            SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
-            var query = conn.Table<Trip>();
-            trips = await query.ToListAsync();
+            //SQLiteAsyncConnection conn = new SQLiteAsyncConnection(dbName);
+            //var query = conn.Table<Trip>();
+            //trips = await query.ToListAsync();
         }
 
         #region SQLite utils
@@ -105,8 +105,6 @@
         private void UseCurrentLocation(object sender, RoutedEventArgs e)
         {
             this.FeedDropDown.IsOpen = false;
-            var mpvm = this.DataContext as MainPageViewModel;
-            mpvm.FromCity = mpvm.Cities[0];
         }
 
         private void RateDriver(object sender, RoutedEventArgs e)
@@ -122,6 +120,11 @@
         private void OptionsButtonClick(object sender, RoutedEventArgs e)
         {
             this.OptionsDropDown.IsOpen = true;
+        }
+
+        private void HideChangeCiries(object sender, RoutedEventArgs e)
+        {
+            this.ChangeCitiesDropDown.IsOpen = false;
         }
     }
 }
