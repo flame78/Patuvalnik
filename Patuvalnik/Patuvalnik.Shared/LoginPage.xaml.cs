@@ -26,5 +26,11 @@ namespace Patuvalnik
         {
             this.InitializeComponent();
         }
+
+        private void LogInWithFbButtonClick(object sender, RoutedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigate(typeof(MainPage));
+        }
     }
 }
